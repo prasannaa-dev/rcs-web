@@ -1,52 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '../context/LanguageContext';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import CountUp from 'react-countup';
-
 
 const HomePage = () => {
-  const { language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Carousel Images - add more as needed
   const carouselImages = [
     '/Images/caro1.png',
-     '/Images/caro2.png',
-          '/Images/caro3.png',
+    '/Images/caro2.png',
+    '/Images/caro3.png',
   ];
   
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
-  const content = {
-    en: {
-      sectionTitle: 'At a Glance',
-      numberOfSectors: 'Number of Sectors',
-      districtLevel: 'District Level Cooperatives',
-      primaryCooperatives: 'Primary Cooperatives',
-      allCooperatives: 'All Cooperatives',
-      farmersHelped: 'Farmers Helped',
-      loanGiven: 'Loan Given to Farmers'
-    },
-    ta: {
-      sectionTitle: 'ஒரு பார்வையில்',
-      numberOfSectors: 'துறைகளின் எண்ணிக்கை',
-      districtLevel: 'மாவட்ட அளவிலான கூட்டுறவு',
-      primaryCooperatives: 'முதன்மை கூட்டுறவு நிறுவனங்கள்',
-      allCooperatives: 'அனைத்து கூட்டுறவு நிறுவனங்கள்',
-      farmersHelped: 'உதவி பெற்ற விவசாயிகள்',
-      loanGiven: 'விவசாயிகளுக்கு வழங்கப்பட்ட கடன்'
-    }
-  };
-  
-  const t = content[language];
-  
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
   };
@@ -98,16 +71,16 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="relative z-20">
-        <div className="w-[90%] mx-auto -mt-10 -mb-6 bg-gradient-to-b from-[#e3f2fd] to-[#90caf9] rounded-3xl shadow-lg py-6 px-6">
+      {/* Statistics Section - FIXED SPACING HERE */}
+      <section className="relative z-20 -mb-16">
+        <div className="w-[90%] mx-auto -mt-10 bg-gradient-to-b from-[#e3f2fd] to-[#90caf9] rounded-3xl shadow-lg py-6 px-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             
             {/* 1. Total Cooperative Sectors */}
             <div className="flex items-center space-x-3">
               <img src="/Images/icon1.png" alt="Total Cooperative Sectors" className="w-9 h-9" />
               <div className="flex flex-col">
-                <CountUp end={25} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
+                <span className="text-lg sm:text-xl font-bold text-[#0d47a1]">25</span>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">Total Cooperative Sectors</span>
               </div>
             </div>
@@ -116,7 +89,7 @@ const HomePage = () => {
             <div className="flex items-center space-x-3">
               <img src="/Images/icon1.png" alt="All Cooperatives" className="w-9 h-9" />
               <div className="flex flex-col">
-                <CountUp end={23140} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
+                <span className="text-lg sm:text-xl font-bold text-[#0d47a1]">23140</span>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">All Cooperatives</span>
               </div>
             </div>
@@ -125,7 +98,7 @@ const HomePage = () => {
             <div className="flex items-center space-x-3">
               <img src="/Images/icon3.png" alt="Primary Cooperatives" className="w-9 h-9" />
               <div className="flex flex-col">
-                <CountUp end={4494} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
+                <span className="text-lg sm:text-xl font-bold text-[#0d47a1]">4494</span>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">Primary Cooperatives</span>
               </div>
             </div>
@@ -134,7 +107,7 @@ const HomePage = () => {
             <div className="flex items-center space-x-3">
               <img src="/Images/icon4.png" alt="Apex Institution" className="w-9 h-9" />
               <div className="flex flex-col">
-                <CountUp end={1} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
+                <span className="text-lg sm:text-xl font-bold text-[#0d47a1]">1</span>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">APEX Institution</span>
               </div>
             </div>
@@ -143,7 +116,7 @@ const HomePage = () => {
             <div className="flex items-center space-x-3">
               <img src="/Images/icon5.png" alt="District Level Cooperative" className="w-9 h-9" />
               <div className="flex flex-col">
-                <CountUp end={2950} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
+                <span className="text-lg sm:text-xl font-bold text-[#0d47a1]">2950</span>
                 <span className="text-xs sm:text-sm font-medium text-gray-700">District Level Cooperative</span>
               </div>
             </div>

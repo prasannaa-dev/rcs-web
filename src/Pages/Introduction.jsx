@@ -48,7 +48,7 @@ const IntroductionPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
       {/* Title Section */}
-      <section className="py-6 bg-white border-b border-gray-100">
+      <section className="pt-0 pb-6 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center ">
             <h1
