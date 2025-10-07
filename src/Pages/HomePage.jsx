@@ -8,7 +8,7 @@ const HomePage = () => {
   const { language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Carousel images - add more as needed
+  // Carousel Images - add more as needed
   const carouselImages = [
     '/Images/caro1.png',
      '/Images/caro2.png',
@@ -105,7 +105,7 @@ const HomePage = () => {
             
             {/* 1. Total Cooperative Sectors */}
             <div className="flex items-center space-x-3">
-              <img src="/images/icon1.png" alt="Total Cooperative Sectors" className="w-9 h-9" />
+              <img src="/Images/icon1.png" alt="Total Cooperative Sectors" className="w-9 h-9" />
               <div className="flex flex-col">
                 <CountUp end={25} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">Total Cooperative Sectors</span>
@@ -114,7 +114,7 @@ const HomePage = () => {
 
             {/* 2. All Cooperatives */}
             <div className="flex items-center space-x-3">
-              <img src="/images/icon1.png" alt="All Cooperatives" className="w-9 h-9" />
+              <img src="/Images/icon1.png" alt="All Cooperatives" className="w-9 h-9" />
               <div className="flex flex-col">
                 <CountUp end={23140} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">All Cooperatives</span>
@@ -123,7 +123,7 @@ const HomePage = () => {
 
             {/* 3. Primary Cooperatives */}
             <div className="flex items-center space-x-3">
-              <img src="/images/icon3.png" alt="Primary Cooperatives" className="w-9 h-9" />
+              <img src="/Images/icon3.png" alt="Primary Cooperatives" className="w-9 h-9" />
               <div className="flex flex-col">
                 <CountUp end={4494} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">Primary Cooperatives</span>
@@ -132,7 +132,7 @@ const HomePage = () => {
 
             {/* 4. Apex Institution */}
             <div className="flex items-center space-x-3">
-              <img src="/images/icon4.png" alt="Apex Institution" className="w-9 h-9" />
+              <img src="/Images/icon4.png" alt="Apex Institution" className="w-9 h-9" />
               <div className="flex flex-col">
                 <CountUp end={1} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">APEX Institution</span>
@@ -141,7 +141,7 @@ const HomePage = () => {
 
             {/* 5. District Level Cooperative */}
             <div className="flex items-center space-x-3">
-              <img src="/images/icon5.png" alt="District Level Cooperative" className="w-9 h-9" />
+              <img src="/Images/icon5.png" alt="District Level Cooperative" className="w-9 h-9" />
               <div className="flex flex-col">
                 <CountUp end={2950} duration={2} className="text-lg sm:text-xl font-bold text-[#0d47a1]" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700">District Level Cooperative</span>
