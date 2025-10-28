@@ -49,18 +49,18 @@ const AboutUs = () => {
             <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 relative z-10">
                 
                 {/* Hero Section with gradient background */}
-                <div className="text-center mb-16 relative">
+                <div className="text-center mb-4 relative -mt-12">
                     <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent blur-3xl -z-10"></div>
                     
                     <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#006AA5] to-[#0088CC] mb-4 tracking-tight">
                         About Us
                     </h1>
-                    <div className="flex items-center justify-center gap-2 mb-6">
+                    <div className="flex items-center justify-center gap-2 -mt-4 ">
                         <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#006AA5]"></div>
                         <div className="w-24 h-1.5 bg-[#006AA5] rounded-full"></div>
                         <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#006AA5]"></div>
                     </div>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light mt-4">
                         Pioneering Cooperative Excellence in Tamil Nadu
                     </p>
                 </div>
@@ -106,50 +106,69 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                {/* Profile Cards Section - Enhanced */}
-                <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mb-20">
-                    {/* Card 1 */}
-                    <div className="group relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
-                        <div className="relative bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl p-10 text-white text-center shadow-2xl transform transition duration-500 hover:scale-[1.03] hover:shadow-3xl overflow-hidden">
-                            {/* Decorative circles */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
-                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full"></div>
-                            
-                            <div className="relative z-10">
-                                <div className="w-28 h-28 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl ring-4 ring-white/20">
-                                    <User className="w-14 h-14 text-[#006AA5]" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-2">Satyabrata Sahoo</h3>
-                                <div className="inline-block bg-white/20 px-4 py-1 rounded-full mb-3">
-                                    <p className="text-sm font-semibold">I.A.S</p>
-                                </div>
-                                <p className="text-base font-light">Principal Secretary to Government</p>
-                            </div>
-                        </div>
-                    </div>
+        {/* Profile Cards Section - Enhanced */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto mb-20">
+    {/* Card 1 */}
+    <div className="group relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+        <div className="relative bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl p-10 text-white text-center shadow-2xl transform transition duration-500 hover:scale-[1.03] hover:shadow-3xl overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full"></div>
 
-                    {/* Card 2 */}
-                    <div className="group relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
-                        <div className="relative bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl p-10 text-white text-center shadow-2xl transform transition duration-500 hover:scale-[1.03] hover:shadow-3xl overflow-hidden">
-                            {/* Decorative circles */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
-                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full"></div>
-                            
-                            <div className="relative z-10">
-                                <div className="w-28 h-28 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl ring-4 ring-white/20">
-                                    <User className="w-14 h-14 text-[#006AA5]" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-2">K. Nanthakumar</h3>
-                                <div className="inline-block bg-white/20 px-4 py-1 rounded-full mb-3">
-                                    <p className="text-sm font-semibold">I.A.S</p>
-                                </div>
-                                <p className="text-base font-light">Registrar of Cooperative Societies</p>
-                            </div>
-                        </div>
-                    </div>
+            <div className="relative z-10">
+                <div className="w-28 h-28 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl ring-4 ring-white/20">
+                    <User className="w-14 h-14 text-[#006AA5]" />
                 </div>
+                <h3 className="text-2xl font-bold mb-2">Satyabrata Sahoo</h3>
+                <div className="inline-block bg-white/20 px-4 py-1 rounded-full mb-3">
+                    <p className="text-sm font-semibold">I.A.S</p>
+                </div>
+                <p className="text-base font-light">Principal Secretary to Government</p>
+            </div>
+        </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="group relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+        <div className="relative bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl p-10 text-white text-center shadow-2xl transform transition duration-500 hover:scale-[1.03] hover:shadow-3xl overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full"></div>
+
+            <div className="relative z-10">
+                <div className="w-28 h-28 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl ring-4 ring-white/20">
+                    <User className="w-14 h-14 text-[#006AA5]" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">K. Nanthakumar</h3>
+                <div className="inline-block bg-white/20 px-4 py-1 rounded-full mb-3">
+                    <p className="text-sm font-semibold">I.A.S</p>
+                </div>
+                <p className="text-base font-light">Registrar of Cooperative Societies</p>
+            </div>
+        </div>
+    </div>
+
+    {/* Card 3 */}
+    <div className="group relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+        <div className="relative bg-gradient-to-br from-[#006AA5] to-[#0088CC] rounded-3xl p-10 text-white text-center shadow-2xl transform transition duration-500 hover:scale-[1.03] hover:shadow-3xl overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full"></div>
+
+            <div className="relative z-10">
+                <div className="w-28 h-28 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl ring-4 ring-white/20">
+                    <User className="w-14 h-14 text-[#006AA5]" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Minitster</h3>
+                <div className="inline-block bg-white/20 px-4 py-1 rounded-full mb-3">
+                    <p className="text-sm font-semibold">I.A.S</p>
+                </div>
+                <p className="text-base font-light">Additional Secretary</p>
+            </div>
+        </div>
+    </div>
+</div>
+
                 
                 {/* Administrative Set Up Section 1 - Enhanced */}
                 <div className="mb-16 relative">
@@ -197,92 +216,6 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Administrative Set Up Section 2 - Enhanced */}
-                <div className="mb-12 relative">
-                    <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
-                        {/* Header with gradient */}
-                        <div className="bg-gradient-to-r from-[#0088CC] to-[#006AA5] py-8 px-6 relative overflow-hidden">
-                            <div className="absolute inset-0 opacity-10">
-                                <Handshake className="w-64 h-64 absolute -left-20 -top-20 transform -rotate-12" />
-                            </div>
-                            <h2 className="text-3xl font-bold text-white text-center relative z-10">
-                                Administrative Set Up at Regional Level
-                            </h2>
-                        </div>
-
-                        <div className="p-8 md:p-12">
-                            <div className="flex flex-col items-center text-sm md:text-base text-gray-800">
-                                {/* Top Level */}
-                                <div className="relative flex flex-col items-center w-full">
-                                    <div className="bg-gradient-to-r from-[#006AA5] to-[#0088CC] text-white font-semibold text-center px-8 py-4 rounded-xl shadow-lg mb-6 max-w-md">
-                                        Administrative Set Up at Regional Level
-                                    </div>
-
-                                    {/* Arrow Down */}
-                                    <div className="flex justify-center text-[#006AA5] text-2xl mb-6">
-                                        <div className="flex flex-col items-center">
-                                            <div>↓</div>
-                                            <div className="w-0.5 h-8 bg-gradient-to-b from-[#006AA5] to-transparent"></div>
-                                        </div>
-                                    </div>
-
-                                    {/* Second Level */}
-                                    <div className="flex flex-col lg:flex-row justify-center items-start gap-16 mt-4 w-full max-w-6xl">
-                                        {/* Left Branch */}
-                                        <div className="flex flex-col items-center flex-1">
-                                            <div className="bg-white border-2 border-[#006AA5] rounded-xl px-6 py-4 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                                <p className="font-semibold">Regional Additional Register (Chennai)</p>
-                                                <p className="text-gray-600 mt-1">/ Regional Joint Registrars</p>
-                                            </div>
-
-                                            {/* Arrow */}
-                                            <div className="flex justify-center text-[#006AA5] text-2xl my-4">
-                                                <div className="flex flex-col items-center">
-                                                    <div>↓</div>
-                                                    <div className="w-0.5 h-6 bg-gradient-to-b from-[#006AA5] to-transparent"></div>
-                                                </div>
-                                            </div>
-
-                                            {/* Third Level Left */}
-                                            <div className="flex flex-col md:flex-row gap-6 mt-2">
-                                                <div className="bg-gray-50 border-2 border-gray-300 rounded-xl px-5 py-3 shadow-md text-center hover:border-[#006AA5] transition-colors duration-300">
-                                                    <p className="font-medium">Circle Deputy Registrars</p>
-                                                </div>
-                                                <div className="bg-gray-50 border-2 border-gray-300 rounded-xl px-5 py-3 shadow-md text-center hover:border-[#006AA5] transition-colors duration-300">
-                                                    <p className="font-medium">Deputy Registrars</p>
-                                                    <p className="text-gray-600 text-sm mt-1">(Public Distribution System)</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Right Branch */}
-                                        <div className="flex flex-col items-center flex-1">
-                                            <div className="bg-white border-2 border-[#006AA5] rounded-xl px-6 py-4 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                                <p className="font-semibold">Joint Registrar</p>
-                                                <p className="text-gray-600 mt-1">(Public Distribution System) – Chennai</p>
-                                            </div>
-
-                                            {/* Arrow */}
-                                            <div className="flex justify-center text-[#006AA5] text-2xl my-4">
-                                                <div className="flex flex-col items-center">
-                                                    <div>↓</div>
-                                                    <div className="w-0.5 h-6 bg-gradient-to-b from-[#006AA5] to-transparent"></div>
-                                                </div>
-                                            </div>
-
-                                            <div className="bg-gray-50 border-2 border-gray-300 rounded-xl px-5 py-3 shadow-md text-center hover:border-[#006AA5] transition-colors duration-300 mt-2">
-                                                <p className="font-medium">Deputy Registrar</p>
-                                                <p className="text-gray-600 text-sm mt-1">(Public Distribution System) – Chennai</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Bottom decorative accent */}
                 <div className="flex justify-center mt-16 mb-8">
                     <div className="flex items-center gap-2">

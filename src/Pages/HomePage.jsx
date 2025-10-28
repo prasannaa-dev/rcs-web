@@ -30,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 -pt-[140px]">
-      {/* Carousel Banner */}
+ {/* Carousel Banner */}
       <section className="relative z-10">
         {/* Mobile responsive carousel, desktop keeps original */}
         <div className="relative w-full overflow-hidden h-80 sm:h-96 lg:h-[600px]">
@@ -52,82 +52,119 @@ const HomePage = () => {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all z-10"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-800" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all z-10"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-800" />
-          </button>
-        </div>
-      </section>
-
-      {/* Statistics Section - FIXED SPACING HERE */}
-      <section className="bg-[#1976d2] py-10">
-        {/* Reduced top padding and margin-top for a tighter look */}
-        <div className="w-[90%] mx-auto bg-white rounded-2xl shadow-xl py-6 px-4 sm:px-8 -mt-4 border border-gray-100 -mb-4">
-          {/* Reduced gap size */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4">
-
-            {/* 1. Total Cooperative Sectors */}
-            {/* Ensure the parent flex item has sufficient height to make the border visible */}
-            <div className="flex items-center space-x-4 p-2 transition duration-300 transform hover:scale-[1.03]">
-              <img src="/Images/icon1.png" alt="Total Cooperative Sectors" className="w-11 h-11 flex-shrink-0" />
-              {/* FIX: ADDED h-full to make the border stretch the full height of the parent flex container (the grid cell) */}
-              <div className="flex flex-col h-full border-l-2 border-l-[#0d47a1] pl-4 ml-2 justify-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#0d47a1]">25</span>
-                <span className="text-xs sm:text-sm font-medium text-gray-600">Total Cooperative Sectors</span>
-              </div>
-            </div>
-
-            {/* 2. All Cooperatives */}
-            <div className="flex items-center space-x-4 p-2 transition duration-300 transform hover:scale-[1.03]">
-              <img src="/Images/icon1.png" alt="All Cooperatives" className="w-11 h-11 flex-shrink-0" />
-              <div className="flex flex-col h-full border-l-2 border-l-[#0d47a1] pl-4 ml-2 justify-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#0d47a1]">23,140</span>
-                <span className="text-xs sm:text-sm font-medium text-gray-600">All Cooperatives</span>
-              </div>
-            </div>
-
-            {/* 3. Primary Cooperatives */}
-            <div className="flex items-center space-x-4 p-2 transition duration-300 transform hover:scale-[1.03]">
-              <img src="/Images/icon3.png" alt="Primary Cooperatives" className="w-11 h-11 flex-shrink-0" />
-              <div className="flex flex-col h-full border-l-2 border-l-[#0d47a1] pl-4 ml-2 justify-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#0d47a1]">4,494</span>
-                <span className="text-xs sm:text-sm font-medium text-gray-600">Primary Cooperatives</span>
-              </div>
-            </div>
-
-            {/* 4. Apex Institution */}
-            <div className="flex items-center space-x-4 p-2 transition duration-300 transform hover:scale-[1.03]">
-              <img src="/Images/icon4.png" alt="Apex Institution" className="w-11 h-11 flex-shrink-0" />
-              <div className="flex flex-col h-full border-l-2 border-l-[#0d47a1] pl-4 ml-2 justify-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#0d47a1]">1</span>
-                <span className="text-xs sm:text-sm font-medium text-gray-600">APEX Institution</span>
-              </div>
-            </div>
-
-            {/* 5. District Level Cooperative */}
-            <div className="flex items-center space-x-4 p-2 transition duration-300 transform hover:scale-[1.03]">
-              <img src="/Images/icon5.png" alt="District Level Cooperative" className="w-11 h-11 flex-shrink-0" />
-              <div className="flex flex-col h-full border-l-2 border-l-[#0d47a1] pl-4 ml-2 justify-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#0d47a1]">2,950</span>
-                <span className="text-xs sm:text-sm font-medium text-gray-600">District Level Cooperative</span>
-              </div>
-            </div>
-
+          {/* Dot Navigation */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`transition-all ${
+                  currentSlide === index
+                    ? 'w-8 h-2 bg-white'
+                    : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+                } rounded-full`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
+{/* Statistics Section - ENHANCED UI */}
+<section className="bg-gradient-to-br from-[#1976d2] to-[#1565c0] py-8 relative overflow-hidden">
+  {/* Decorative background elements */}
+  <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+  
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+      {/* 1. Total Cooperative Sectors */}
+      <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-blue-100 hover:border-blue-300">
+        <div className="flex items-start space-x-4">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full p-3">
+              <img src="/Images/icon1.png" alt="Total Cooperative Sectors" className="w-8 h-8" />
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#1976d2] to-[#0d47a1] bg-clip-text text-transparent mb-1">25</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-600 leading-tight">Total Cooperative Sectors</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+
+      {/* 2. All Cooperatives */}
+      <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-blue-100 hover:border-blue-300">
+        <div className="flex items-start space-x-4">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full p-3">
+              <img src="/Images/icon1.png" alt="All Cooperatives" className="w-8 h-8" />
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#1976d2] to-[#0d47a1] bg-clip-text text-transparent mb-1">23,140</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-600 leading-tight">All Cooperatives</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+
+      {/* 3. Primary Cooperatives */}
+      <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-blue-100 hover:border-blue-300">
+        <div className="flex items-start space-x-4">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full p-3">
+              <img src="/Images/icon3.png" alt="Primary Cooperatives" className="w-8 h-8" />
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#1976d2] to-[#0d47a1] bg-clip-text text-transparent mb-1">4,494</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-600 leading-tight">Primary Cooperatives</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+
+      {/* 4. Apex Institution */}
+      <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-blue-100 hover:border-blue-300">
+        <div className="flex items-start space-x-4">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full p-3">
+              <img src="/Images/icon4.png" alt="Apex Institution" className="w-8 h-8" />
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#1976d2] to-[#0d47a1] bg-clip-text text-transparent mb-1">1</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-600 leading-tight">APEX Institution</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+
+      {/* 5. District Level Cooperative */}
+      <div className="group relative bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-blue-100 hover:border-blue-300">
+        <div className="flex items-start space-x-4">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-[#1976d2] to-[#0d47a1] rounded-full p-3">
+              <img src="/Images/icon5.png" alt="District Level Cooperative" className="w-8 h-8" />
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#1976d2] to-[#0d47a1] bg-clip-text text-transparent mb-1">2,950</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-600 leading-tight">District Level Cooperative</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+
+    </div>
+
+</section>
     </div>
   );
 };

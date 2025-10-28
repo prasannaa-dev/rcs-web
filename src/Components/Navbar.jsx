@@ -399,31 +399,32 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Login Dropdown */}
-              <div className="relative">
-                <div
-
-                  className="flex items-center bg-gradient-to-r from-white to-gray-100 text-[#006AA5] px-3 xl:px-6 py-2 rounded-lg font-bold cursor-pointer hover:from-yellow-400 hover:to-yellow-500 hover:text-black transition-all duration-300 text-sm xl:text-base shadow-lg hover:shadow-xl transform hover:scale-105 ring-2 ring-white ring-opacity-20 whitespace-nowrap"
-                  onClick={() => setLoginDropdown(!loginDropdown)}
-                >
-                  LOGIN
-
-                  <ChevronDown size={14} className="ml-1 xl:ml-2" />
-                </div>
-
-                {loginDropdown && (
-                  <div className="absolute top-full right-0 mt-2 w-40 bg-white shadow-lg rounded-lg border z-50">
-                    <a
-                      href="#" className="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-t-lg text-base">
-                      Test 1
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-b-lg text-base">
-
-                      Test
-                    </a>
-                  </div>
-                )}
-              </div>
+    {/* Login Dropdown */}
+<div className="relative group">
+  <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+    <span>Login</span>
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  
+  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+    <div className="py-2">
+      <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+        eRCS
+      </a>
+      <a href="https://rcs-dms.onlinetn.com/login" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+        DMS
+      </a>
+      <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+        Dashboard
+      </a>
+      <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+        LIST
+      </a>
+    </div>
+  </div>
+</div>
 
               {/* Language Toggle */}
               <div
@@ -480,73 +481,41 @@ const Navbar = () => {
           />
         </div>
       </div>
-
 {/* BOTTOM LAYER - White Section with Title */}
-<div className="relative flex justify-center mt-[56px] lg:mt-[62px] bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 overflow-hidden">
+<div className="relative flex justify-start mt-[56px] lg:mt-[62px] bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 overflow-hidden">
     {/* Decorative Background Pattern */}
-    <div className="absolute inset-0 opacity-[0.07]">
-        {/* Cooperative Icons Pattern */}
-        <div className="absolute top-4 left-[5%] text-blue-400 text-6xl">🤝</div>
-        <div className="absolute top-20 right-[8%] text-blue-400 text-5xl">⚖️</div>
-        <div className="absolute bottom-8 left-[15%] text-blue-400 text-7xl">📋</div>
-        <div className="absolute bottom-20 right-[12%] text-blue-400 text-6xl">🏛️</div>
-        <div className="absolute top-1/2 left-[3%] text-blue-400 text-5xl">🤝</div>
-        <div className="absolute top-1/3 right-[5%] text-blue-400 text-7xl">📋</div>
-    </div>
-
-    {/* Geometric Pattern Overlay */}
-    <div className="absolute inset-0 opacity-[0.05]">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <circle cx="30" cy="30" r="2" fill="#3b82f6"/>
-                    <circle cx="0" cy="0" r="2" fill="#3b82f6"/>
-                    <circle cx="60" cy="0" r="2" fill="#3b82f6"/>
-                    <circle cx="0" cy="60" r="2" fill="#3b82f6"/>
-                    <circle cx="60" cy="60" r="2" fill="#3b82f6"/>
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-    </div>
-
-    {/* Subtle Wave Effect */}
-    <div className="absolute bottom-0 left-0 right-0 opacity-20">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#93c5fd"></path>
-        </svg>
+    <div className="absolute inset-0 opacity-[0.15]">
+        {/* Cooperative Icons Pattern - Adjusted for left alignment */}
+        <div className="absolute top-4 left-[40%] text-blue-500 text-6xl font-bold">⚖</div>
+        <div className="absolute top-20 right-[8%] text-blue-500 text-5xl font-bold">§</div>
+        <div className="absolute bottom-8 left-[50%] text-blue-500 text-7xl font-bold">≡</div>
+        <div className="absolute bottom-20 right-[12%] text-blue-500 text-6xl font-bold">⚖</div>
+        <div className="absolute top-1/2 right-[20%] text-blue-500 text-5xl font-bold">⚖</div>
+        <div className="absolute top-1/3 right-[5%] text-blue-500 text-7xl font-bold">≡</div>
+        <div className="absolute top-2/3 left-[45%] text-blue-500 text-6xl font-bold">§</div>
     </div>
 
     {/* Header content with logos and title */}
-    <div className="relative flex items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 py-4 md:py-6 px-4">
+    <div className="relative flex items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 py-2 md:py-3 px-4 md:px-6 lg:px-8">
         {/* Left Logo */}
         <div className="flex-shrink-0">
-            <div className="relative group">
-                <div className="rounded-full shadow-lg overflow-hidden ring-2 ring-white/60">
-                    <img
-                        src="/Images/cooplogo.png"
-                        alt="Left Cooperative Logo"
-                        className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                </div>
+            <div className="rounded-full shadow-lg overflow-hidden bg-white">
+                <img
+                    src="/Images/cooplogo.png"
+                    alt="Left Cooperative Logo"
+                    className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 rounded-full object-cover"
+                />
             </div>
         </div>
 
-        {/* Center Title */}
-        <div className="text-center flex-1 max-w-3xl relative">
-            <div className="bg-white/40 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-lg">
-                <h5 className="text-red-600 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight tracking-wide drop-shadow-md">
-                    REGISTRAR OF COOPERATIVE SOCIETIES
-                </h5>
-                <h5 className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold leading-tight tracking-wide drop-shadow-md mt-1">
-                    கூட்டுறவுச் சங்கங்களின் பதிவாளர்
-                </h5>
-            </div>
-        </div>
-
-        {/* Right Logo - Placeholder for balance */}
-        <div className="flex-shrink-0 opacity-0 pointer-events-none">
-            <div className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"></div>
+        {/* Left-Aligned Title */}
+        <div className="text-left">
+            <h5 className="text-red-600 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight tracking-wide">
+                REGISTRAR OF COOPERATIVE SOCIETIES
+            </h5>
+            <h5 className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold leading-tight tracking-wide mt-1">
+                கூட்டுறவுச் சங்கங்களின் பதிவாளர்
+            </h5>
         </div>
     </div>
 </div>
