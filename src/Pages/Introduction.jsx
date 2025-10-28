@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import LinksComponent from './Links';
 import FindBranches from './FindBranches';
+import { ChevronLeft, ChevronRight, Scale, Landmark, Users } from 'lucide-react';
+
 
 const IntroductionPage = () => {
   const { language } = useLanguage();
@@ -46,13 +47,14 @@ const IntroductionPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+    <div className="min-h-screen  from-slate-50 via-gray-50 to-blue-50 mt-8 -mb-5">
       {/* Title Section */}
       <section className="pt-0 pb-6 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center ">
             <h1
-              className="text-3xl md:text-4xl font-bold text-gray-800 mb-2"
+              // Increased from text-3xl md:text-4xl to text-4xl md:text-5xl for a larger title
+              className="text-4xl md:text-5xl font-bold text-gray-800 mb-2"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               {t.title}
@@ -60,8 +62,9 @@ const IntroductionPage = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
             {/* Introduction Text */}
             <div className="p-8 md:p-10 bg-white">
-          <div className="max-w-7xl mx-auto">
-                <p className="text-gray-800 leading-relaxed text-base text-justify">
+              <div className="max-w-7xl mx-auto">
+                {/* Increased from text-base to text-lg for larger body text */}
+                <p className="text-gray-800 leading-relaxed text-lg text-justify">
                   {t.mainText}
                   <button className="text-blue-600 hover:text-blue-700 ml-1 font-normal transition-colors duration-200">
                     {t.readMore}
@@ -69,16 +72,37 @@ const IntroductionPage = () => {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* Content Section */}
- {/* Content Section */}
-<section className="py-8 bg-gray-50">
-<div className="container mx-auto px-4 max-w-[80%]">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+{/* Content Section */}
+<section className="py-8 bg-gray-200 overflow-hidden relative">
+  <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+    
+    {/* Justice Scale Icon - Floating and Pulsing */}
+    <div className="absolute top-1/4 left-1/4 text-blue-300/50 animate-pulse-slow">
+      <Scale size={90} className="opacity-50" /> 
+    </div>
+    
+    {/* Users/Community Icon - Slow Floating Movement */}
+    <div className="absolute bottom-1/4 right-1/4 text-gray-400/50 animate-float-slow">
+      <Users size={120} className="opacity-50" />
+    </div>
+
+    {/* Landmark/Government Building Icon - Tucked in corner */}
+    <div className="absolute top-1/2 right-10 text-blue-300/50 animate-pulse-slow delay-1000"> 
+      <Landmark size={70} className="opacity-30" />
+    </div>
+
+  </div>
+  
+  {/* FIX: Removed max-w-[80%] from here to let the container take full width */}
+  <div className="container mx-auto px-4 relative z-10"> 
+    
+    {/* NEW: Added max-w-[80%] and mx-auto here to center the content grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[80%] mx-auto"> 
 
       {/* Image Card */}
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -88,7 +112,7 @@ const IntroductionPage = () => {
             alt="Government Meeting"
             className="w-full h-80 object-cover"
           />
-          
+
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
@@ -109,17 +133,17 @@ const IntroductionPage = () => {
       {/* What's New Card */}
       <div className="bg-white rounded-lg shadow-md p-8">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-900">
+          <h3 className="text-3xl font-bold text-gray-900">
             {t.whatsNewTitle}
           </h3>
           <div className="w-20 h-1 bg-blue-600 mx-auto mt-2"></div>
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-semibold text-blue-600 text-base leading-tight">
+          <h4 className="font-semibold text-blue-600 text-xl leading-tight">
             {t.newsTitle}
           </h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-base leading-relaxed">
             {t.newsDescription}
           </p>
         </div>
@@ -127,7 +151,8 @@ const IntroductionPage = () => {
     </div>
   </div>
 </section>
-    {/* Map Section */}
+
+      {/* Map Section */}
       <FindBranches />
       {/* Links Section */}
       <LinksComponent />

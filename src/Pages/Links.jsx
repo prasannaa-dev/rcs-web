@@ -90,7 +90,7 @@ const LinksComponent = () => {
   const t = content[language];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <section className="py-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -mt-60">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-8">

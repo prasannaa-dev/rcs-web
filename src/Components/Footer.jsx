@@ -5,31 +5,32 @@ const Footer = () => {
   return (
     <footer className="bg-[#006AA5] text-white">
       {/* Top Logo and Header */}
-      <div className="flex justify-center">
-        <div className="w-2/4 bg-white rounded-b-2xl shadow-md py-6 flex items-center justify-center space-x-6">
-          {/* Left Logo */}
-          <img
+  <div className="flex justify-center">
+    <div className="w-2/4 bg-white rounded-b-2xl shadow-md py-6 flex items-center justify-center space-x-6">
+        {/* Left Logo - Increased size */}
+        <img
             src="/Images/cooplogo.png"
             alt="Tamil Nadu Logo"
-            className="h-14 w-14 object-contain rounded-full"
-          />
-          {/* Title */}
-          <div className="text-center">
-            <h1 className="text-lg md:text-xl font-bold text-red-500 uppercase">
-              Registrar of Cooperative Societies
+            className="h-20 w-20 object-contain rounded-full"
+        />
+        {/* Title - Increased font size */}
+        <div className="text-center">
+            <h1 className="text-xl md:text-2xl font-bold text-red-500 uppercase">
+                Registrar of Cooperative Societies
             </h1>
-            <p className="text-white text-sm text-black">
-              கூட்டுறவு சங்கங்களின் பதிவாளர்
+            {/* Subtitle - Increased font size */}
+            <p className="text-base text-black">
+                கூட்டுறவு சங்கங்களின் பதிவாளர்
             </p>
-          </div>
-          {/* Right Logo */}
-          <img
-            src="/Images/rcs_new.png"
-            alt="Right Logo"
-            className="h-14 w-14 object-contain rounded-full"
-          />
         </div>
-      </div>
+        {/* Right Logo - Increased size */}
+        <img
+            src="/Images/images.png"
+            alt="Right Logo"
+            className="h-20 w-20 object-contain rounded-full"
+        />
+    </div>
+</div>
 
       {/* Main Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-8 text-center">

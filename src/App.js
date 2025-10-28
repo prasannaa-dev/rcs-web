@@ -12,6 +12,7 @@ import Porul from './Pages/Porul';
 import Inbam from './Pages/Inbam';
 import Features from './Pages/Features';
 import FindBranches from './Pages/FindBranches';
+import AboutUs from './Pages/AboutUs';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/repositories" element={<Repositories />} />
           <Route path="/section1" element={<Aram />} />
           <Route path="/section2" element={<Porul />} />

@@ -30,38 +30,40 @@ export default function FindBranches() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           Find Our Branches
-          <div className="h-1 w-24 bg-[#006AA5]  mt-2"></div>
+          <div className="h-1 w-24 bg-[#006AA5]  mt-2"></div>
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Map Section */}
-<div className="lg:col-span-2">
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62214.02095742329!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695969870000!5m2!1sen!2sin"
-      width="100%"
-      height="350"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</div>
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              {/* Note: The iframe is a placeholder for the actual GoogleMap component */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62214.02095742329!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695969870000!5m2!1sen!2sin"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
 
-
-
-          {/* Filter Section */}
+          {/* Filter Section - Increased Font Sizes */}
           <div className="lg:col-span-1">
-            <div className=" p-6 space-y-6">
+            {/* Added bg-white, rounded-lg, and shadow-md for visual separation */}
+            <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                {/* Increased text-gray-700 to text-gray-800, and font-semibold to font-bold. Increased text size from default to text-lg */}
+                <label className="block text-gray-800 font-bold mb-3 text-lg">
                   Region
                 </label>
                 <select
                   value={region}
                   onChange={(e) => setRegion(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  // Increased padding and border styles for a larger look. Increased text size to text-base (or keep default for now, text-lg if you want it very large)
+                  className="w-full px-5 py-3 border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow duration-200 shadow-sm hover:shadow-md"
                 >
                   <option value="Coimbatore">Coimbatore</option>
                   <option value="Salem">Salem</option>
@@ -71,13 +73,15 @@ export default function FindBranches() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                {/* Increased text-gray-700 to text-gray-800, and font-semibold to font-bold. Increased text size from default to text-lg */}
+                <label className="block text-gray-800 font-bold mb-3 text-lg">
                   Society Type
                 </label>
                 <select
                   value={societyType}
                   onChange={(e) => setSocietyType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  // Increased padding and border styles for a larger look. Increased text size to text-base (or keep default for now, text-lg if you want it very large)
+                  className="w-full px-5 py-3 border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow duration-200 shadow-sm hover:shadow-md"
                 >
                   <option value="PCS">PCS</option>
                   <option value="PACS">PACS</option>
@@ -86,15 +90,15 @@ export default function FindBranches() {
                 </select>
               </div>
 
-        <div className="flex justify-center">
-  <button
-    className="bg-[#006AA5] hover:bg-[#005885] text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 flex items-center justify-center gap-2 text-sm"
-  >
-    <Search className="w-4 h-4" />
-    FILTER
-  </button>
-</div>
-
+              <div className="flex justify-center pt-2">
+                {/* Increased py-2 to py-3 and px-6 to px-8. Increased text-sm to text-base */}
+                <button
+                  className="bg-[#006AA5] hover:bg-[#005885] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-base shadow-md hover:shadow-lg"
+                >
+                  <Search className="w-5 h-5" />
+                  FILTER
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -19,6 +19,27 @@ module.exports = {
         // Add custom spacing if needed
         '128': '32rem', // Example: Custom spacing for margins/padding
       },
+      
+      // =======================================================
+      //  NEW ADDITIONS FOR FLOATING ICONS
+      // =======================================================
+      keyframes: {
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+          '30%': { transform: 'translateY(-20px) translateX(15px)' },
+          '60%': { transform: 'translateY(20px) translateX(-10px)' },
+        },
+        'pulse-slow': {
+          '0%, 100%': { opacity: '0.1' },
+          '50%': { opacity: '0.05' },
+        }
+      },
+      animation: {
+        'float-slow': 'float-slow 20s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 8s ease-in-out infinite',
+      },
+      // =======================================================
+      
     },
   },
   plugins: [],
