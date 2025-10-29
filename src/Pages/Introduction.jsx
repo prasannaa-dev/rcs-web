@@ -47,26 +47,21 @@ const IntroductionPage = () => {
   };
 
   return (
-    <div className="min-h-screen  from-slate-50 via-gray-50 to-blue-50 mt-8 -mb-5">
-      {/* Title Section */}
-      <section className="pt-0 pb-6 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center ">
-            <h1
-              // Increased from text-3xl md:text-4xl to text-4xl md:text-5xl for a larger title
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-2"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-6 -mb-5" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+      {/* Title Section - Compact with wheat background */}
+      <section className="py-3 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200">
+        <div className="container mx-auto px-4"> 
+          <div className="text-center">
+            <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
               {t.title}
             </h1>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
-            {/* Introduction Text */}
-            <div className="p-8 md:p-10 bg-white">
-              <div className="max-w-7xl mx-auto">
-                {/* Increased from text-base to text-lg for larger body text */}
-                <p className="text-gray-800 leading-relaxed text-lg text-justify">
+            <div className="w-16 h-0.5 bg-amber-600 mx-auto"></div>
+            {/* Introduction Text - Compact padding with subtle background */}
+            <div className="py-4 px-4 md:px-6 mt-3 bg-white/60 backdrop-blur-sm rounded-lg">
+              <div className="max-w-6xl mx-auto">
+                <p className="text-gray-800 leading-relaxed text-sm md:text-base text-justify">
                   {t.mainText}
-                  <button className="text-blue-600 hover:text-blue-700 ml-1 font-normal transition-colors duration-200">
+                  <button className="text-amber-700 hover:text-amber-800 ml-1 font-medium transition-colors duration-200 underline">
                     {t.readMore}
                   </button>
                 </p>
@@ -77,73 +72,71 @@ const IntroductionPage = () => {
       </section>
 
 
-{/* Content Section */}
-<section className="py-8 bg-gray-200 overflow-hidden relative">
-  <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+{/* Content Section - Compact with warm background */}
+<section className="py-4 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 overflow-hidden relative">
+  <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
     
-    {/* Justice Scale Icon - Floating and Pulsing */}
-    <div className="absolute top-1/4 left-1/4 text-blue-300/50 animate-pulse-slow">
-      <Scale size={90} className="opacity-50" /> 
+    {/* Justice Scale Icon */}
+    <div className="absolute top-1/4 left-1/4 text-amber-400/50 animate-pulse-slow">
+      <Scale size={80} className="opacity-40" /> 
     </div>
     
-    {/* Users/Community Icon - Slow Floating Movement */}
-    <div className="absolute bottom-1/4 right-1/4 text-gray-400/50 animate-float-slow">
-      <Users size={120} className="opacity-50" />
+    {/* Users/Community Icon */}
+    <div className="absolute bottom-1/4 right-1/4 text-orange-400/50 animate-float-slow">
+      <Users size={100} className="opacity-40" />
     </div>
 
-    {/* Landmark/Government Building Icon - Tucked in corner */}
-    <div className="absolute top-1/2 right-10 text-blue-300/50 animate-pulse-slow delay-1000"> 
-      <Landmark size={70} className="opacity-30" />
+    {/* Landmark/Government Building Icon */}
+    <div className="absolute top-1/2 right-10 text-amber-400/50 animate-pulse-slow delay-1000"> 
+      <Landmark size={60} className="opacity-30" />
     </div>
 
   </div>
   
-  {/* FIX: Removed max-w-[80%] from here to let the container take full width */}
   <div className="container mx-auto px-4 relative z-10"> 
     
-    {/* NEW: Added max-w-[80%] and mx-auto here to center the content grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[80%] mx-auto"> 
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[90%] mx-auto"> 
 
-      {/* Image Card */}
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      {/* Image Card - Compact */}
+      <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm overflow-hidden border border-amber-100">
         <div className="relative group">
           <img
             src="/Images/intro.png"
             alt="Government Meeting"
-            className="w-full h-80 object-cover"
+            className="w-full h-64 object-cover"
           />
 
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-2 rounded-full shadow-lg transition-all"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-amber-100/90 hover:bg-amber-200 text-gray-800 p-1.5 rounded-full shadow-md transition-all"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={18} />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 p-2 rounded-full shadow-lg transition-all"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-amber-100/90 hover:bg-amber-200 text-gray-800 p-1.5 rounded-full shadow-md transition-all"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </button>
         </div>
       </div>
 
-      {/* What's New Card */}
-      <div className="bg-white rounded-lg shadow-md p-8">
-        <div className="text-center mb-6">
-          <h3 className="text-3xl font-bold text-gray-900">
+      {/* What's New Card - Compact with warm colors */}
+      <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm p-5 border border-amber-100">
+        <div className="text-center mb-3">
+          <h3 className="text-xl font-semibold text-gray-900">
             {t.whatsNewTitle}
           </h3>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mt-2"></div>
+          <div className="w-16 h-0.5 bg-amber-600 mx-auto mt-2"></div>
         </div>
 
-        <div className="space-y-4">
-          <h4 className="font-semibold text-blue-600 text-xl leading-tight">
+        <div className="space-y-2">
+          <h4 className="font-medium text-amber-800 text-base leading-snug">
             {t.newsTitle}
           </h4>
-          <p className="text-gray-700 text-base leading-relaxed">
+          <p className="text-gray-700 text-sm leading-relaxed">
             {t.newsDescription}
           </p>
         </div>

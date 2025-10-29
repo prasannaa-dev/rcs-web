@@ -90,49 +90,45 @@ const LinksComponent = () => {
   const t = content[language];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 -mt-60">
+    <section className="py-10 bg-gray-100" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-8">
-          <h2 
-            className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
-          >
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
             {t.sectionTitle}
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+          <div className="w-16 h-0.5 bg-indigo-600 mx-auto"></div>
         </div>
 
         {/* Links Grid */}
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-  {t.links.map((link, index) => (
-    <a
-      key={index}
-      href={link.url}
-      className="group block rounded-xl shadow-md transition-all duration-300 p-4 transform hover:-translate-y-1 hover:scale-105 h-32 flex flex-col
-                 bg-white border border-transparent
-                 hover:border-transparent
-                 hover:bg-gradient-to-b hover:from-white hover:to-[#006AA5]/20"
-    >
-      {/* Logo container */}
-      <div className="flex-1 flex items-center justify-center mb-2">
-        <img
-          src={link.logo}
-          alt={link.title}
-          className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-          onError={(e) => {
-            e.target.style.display = 'none';
-            const placeholder = document.createElement('div');
-            placeholder.className = 'w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded flex items-center justify-center text-blue-700 text-sm font-semibold';
-            placeholder.textContent = link.title.charAt(0);
-            e.target.parentNode.appendChild(placeholder);
-          }}
-        />
-      </div>
-    </a>
-  ))}
-</div>
-
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5 max-w-[95%] mx-auto">
+          {t.links.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              className="group block rounded-xl shadow-md transition-all duration-300 p-5 transform hover:-translate-y-2 hover:shadow-xl
+                         bg-sky-100 border-2 border-sky-200
+                         hover:border-sky-300
+                         hover:bg-sky-50 flex items-center justify-center min-h-[140px]"
+            >
+              {/* Logo container */}
+              <div className="w-full h-full flex items-center justify-center">
+                <img
+                  src={link.logo}
+                  alt={link.title}
+                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'w-16 h-16 bg-gradient-to-br from-sky-200 to-blue-200 rounded-lg flex items-center justify-center text-sky-700 text-lg font-semibold shadow-sm';
+                    placeholder.textContent = link.title.charAt(0);
+                    e.target.parentNode.appendChild(placeholder);
+                  }}
+                />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

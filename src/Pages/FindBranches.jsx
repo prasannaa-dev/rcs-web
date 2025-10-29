@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { Search } from "lucide-react";
+import { Search, MapPin } from "lucide-react";
 
 export default function FindBranches() {
   const [region, setRegion] = useState("Coimbatore");
@@ -26,22 +26,24 @@ export default function FindBranches() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
-          Find Our Branches
-          <div className="h-1 w-24 bg-[#006AA5]  mt-2"></div>
-        </h1>
+    <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 py-6" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Title Section - Matching Introduction Page Style */}
+        <div className="text-center mb-5">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+            Find Our Branches
+          </h2>
+          <div className="w-16 h-0.5 bg-indigo-600 mx-auto"></div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-[90%] mx-auto">
           {/* Map Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              {/* Note: The iframe is a placeholder for the actual GoogleMap component */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm overflow-hidden border border-indigo-300">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62214.02095742329!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695969870000!5m2!1sen!2sin"
                 width="100%"
-                height="350"
+                height="320"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -50,20 +52,17 @@ export default function FindBranches() {
             </div>
           </div>
 
-          {/* Filter Section - Increased Font Sizes */}
+          {/* Filter Section - Matching card style */}
           <div className="lg:col-span-1">
-            {/* Added bg-white, rounded-lg, and shadow-md for visual separation */}
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm p-5 border border-indigo-300 space-y-4">
               <div>
-                {/* Increased text-gray-700 to text-gray-800, and font-semibold to font-bold. Increased text size from default to text-lg */}
-                <label className="block text-gray-800 font-bold mb-3 text-lg">
+                <label className="block text-gray-800 font-medium mb-2 text-base">
                   Region
                 </label>
                 <select
                   value={region}
                   onChange={(e) => setRegion(e.target.value)}
-                  // Increased padding and border styles for a larger look. Increased text size to text-base (or keep default for now, text-lg if you want it very large)
-                  className="w-full px-5 py-3 border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow duration-200 shadow-sm hover:shadow-md"
+                  className="w-full px-4 py-2.5 border border-indigo-300 rounded-lg text-sm bg-white/60 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-indigo-400"
                 >
                   <option value="Coimbatore">Coimbatore</option>
                   <option value="Salem">Salem</option>
@@ -73,15 +72,13 @@ export default function FindBranches() {
               </div>
 
               <div>
-                {/* Increased text-gray-700 to text-gray-800, and font-semibold to font-bold. Increased text size from default to text-lg */}
-                <label className="block text-gray-800 font-bold mb-3 text-lg">
+                <label className="block text-gray-800 font-medium mb-2 text-base">
                   Society Type
                 </label>
                 <select
                   value={societyType}
                   onChange={(e) => setSocietyType(e.target.value)}
-                  // Increased padding and border styles for a larger look. Increased text size to text-base (or keep default for now, text-lg if you want it very large)
-                  className="w-full px-5 py-3 border border-gray-300 rounded-lg text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow duration-200 shadow-sm hover:shadow-md"
+                  className="w-full px-4 py-2.5 border border-indigo-300 rounded-lg text-sm bg-white/60 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-indigo-400"
                 >
                   <option value="PCS">PCS</option>
                   <option value="PACS">PACS</option>
@@ -91,11 +88,10 @@ export default function FindBranches() {
               </div>
 
               <div className="flex justify-center pt-2">
-                {/* Increased py-2 to py-3 and px-6 to px-8. Increased text-sm to text-base */}
                 <button
-                  className="bg-[#006AA5] hover:bg-[#005885] text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-base shadow-md hover:shadow-lg"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-7 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm shadow-sm hover:shadow-md"
                 >
-                  <Search className="w-5 h-5" />
+                  <Search className="w-4 h-4" />
                   FILTER
                 </button>
               </div>
