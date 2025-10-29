@@ -29,7 +29,7 @@ const Navbar = () => {
       gallery: 'Gallery',
       information: 'Information',
       contact: 'Contact Us',
-      title: 'REGISTRAR OF COOPERATIVE SOCIETIES',
+      title: 'COOPERATIVE SOCIETIES TAMIL NADU',
       login: 'Login',
 
       // Department sub-items
@@ -68,7 +68,7 @@ const Navbar = () => {
       information: 'தகவல்',
       login: 'உள்நுழைவு',
       contact: 'தொடர்பு கொள்ளவும்',
-      title: 'கூட்டுறவுச் சங்கங்களின் பதிவாளர்',
+      title: 'கூட்டுறவுச் சங்கங்கள் தமிழ்நாடு',
 
       // Department sub-items
       creditCooperatives: 'கடன் கூட்டுறவு நிறுவனங்கள்',
@@ -471,10 +471,10 @@ const Navbar = () => {
           {/* Title Section - Centered */}
           <div className="text-center">
             <h1 className="text-red-600 text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
-              REGISTRAR OF COOPERATIVE SOCIETIES
+      COOPERATIVE SOCIETIES TAMIL NADU
             </h1>
             <h2 className="text-gray-700 text-xl lg:text-2xl xl:text-3xl font-semibold leading-tight mt-2">
-              கூட்டுறவுச் சங்கங்களின் பதிவாளர்
+              கூட்டுறவுச் சங்கங்கள் தமிழ்நாடு
             </h2>
           </div>
 
