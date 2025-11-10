@@ -4,7 +4,6 @@ import LinksComponent from './Links';
 import FindBranches from './FindBranches';
 import { ChevronLeft, ChevronRight, Scale, Landmark, Users } from 'lucide-react';
 
-
 const IntroductionPage = () => {
   const { language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,21 +46,21 @@ const IntroductionPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-6 -mb-5" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
-      {/* Title Section - Compact with wheat background */}
-      <section className="py-3 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200">
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+      {/* Title Section - Neutral Clean Header */}
+      <section className="py-6 bg-white border-b-2 border-gray-200">
         <div className="container mx-auto px-4"> 
           <div className="text-center">
-            <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
               {t.title}
             </h1>
-            <div className="w-16 h-0.5 bg-amber-600 mx-auto"></div>
-            {/* Introduction Text - Compact padding with subtle background */}
-            <div className="py-4 px-4 md:px-6 mt-3 bg-white/60 backdrop-blur-sm rounded-lg">
+            <div className="w-20 h-1 bg-gray-800 mx-auto"></div>
+            {/* Introduction Text */}
+            <div className="py-6 px-4 md:px-8 mt-4 bg-gray-50 border border-gray-200">
               <div className="max-w-6xl mx-auto">
-                <p className="text-gray-800 leading-relaxed text-sm md:text-base text-justify">
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
                   {t.mainText}
-                  <button className="text-amber-700 hover:text-amber-800 ml-1 font-medium transition-colors duration-200 underline">
+                  <button className="text-gray-800 hover:text-black ml-1 font-semibold transition-colors duration-200 underline">
                     {t.readMore}
                   </button>
                 </p>
@@ -71,82 +70,82 @@ const IntroductionPage = () => {
         </div>
       </section>
 
+      {/* Content Section - Clean White Background */}
+      <section className="py-8 bg-white overflow-hidden relative">
+        <div className="absolute inset-0 z-0 opacity-3 pointer-events-none">
+          {/* Justice Scale Icon */}
+          <div className="absolute top-1/4 left-1/4 text-gray-300 animate-pulse-slow">
+            <Scale size={80} className="opacity-20" /> 
+          </div>
+          
+          {/* Users/Community Icon */}
+          <div className="absolute bottom-1/4 right-1/4 text-gray-300 animate-float-slow">
+            <Users size={100} className="opacity-20" />
+          </div>
 
-{/* Content Section - Compact with warm background */}
-<section className="py-4 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 overflow-hidden relative">
-  <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
-    
-    {/* Justice Scale Icon */}
-    <div className="absolute top-1/4 left-1/4 text-amber-400/50 animate-pulse-slow">
-      <Scale size={80} className="opacity-40" /> 
-    </div>
-    
-    {/* Users/Community Icon */}
-    <div className="absolute bottom-1/4 right-1/4 text-orange-400/50 animate-float-slow">
-      <Users size={100} className="opacity-40" />
-    </div>
-
-    {/* Landmark/Government Building Icon */}
-    <div className="absolute top-1/2 right-10 text-amber-400/50 animate-pulse-slow delay-1000"> 
-      <Landmark size={60} className="opacity-30" />
-    </div>
-
-  </div>
-  
-  <div className="container mx-auto px-4 relative z-10"> 
-    
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[90%] mx-auto"> 
-
-      {/* Image Card - Compact */}
-      <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm overflow-hidden border border-amber-100">
-        <div className="relative group">
-          <img
-            src="/Images/intro.png"
-            alt="Government Meeting"
-            className="w-full h-64 object-cover"
-          />
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-amber-100/90 hover:bg-amber-200 text-gray-800 p-1.5 rounded-full shadow-md transition-all"
-          >
-            <ChevronLeft size={18} />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-amber-100/90 hover:bg-amber-200 text-gray-800 p-1.5 rounded-full shadow-md transition-all"
-          >
-            <ChevronRight size={18} />
-          </button>
+          {/* Landmark/Government Building Icon */}
+          <div className="absolute top-1/2 right-10 text-gray-300 animate-pulse-slow delay-1000"> 
+            <Landmark size={60} className="opacity-20" />
+          </div>
         </div>
-      </div>
+        
+        <div className="container mx-auto px-4 relative z-10"> 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto"> 
 
-      {/* What's New Card - Compact with warm colors */}
-      <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm p-5 border border-amber-100">
-        <div className="text-center mb-3">
-          <h3 className="text-xl font-semibold text-gray-900">
-            {t.whatsNewTitle}
-          </h3>
-          <div className="w-16 h-0.5 bg-amber-600 mx-auto mt-2"></div>
-        </div>
+            {/* Image Card */}
+            <div className="bg-white shadow-lg overflow-hidden border border-gray-300">
+              <div className="relative group">
+                <img
+                  src="/Images/intro.png"
+                  alt="Government Meeting"
+                  className="w-full h-80 object-cover"
+                />
 
-        <div className="space-y-2">
-          <h4 className="font-medium text-amber-800 text-base leading-snug">
-            {t.newsTitle}
-          </h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            {t.newsDescription}
-          </p>
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 shadow-md transition-all"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 shadow-md transition-all"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
+
+            {/* What's New Card */}
+            <div className="bg-gray-50 shadow-lg p-6 border border-gray-300">
+              <div className="text-center mb-4">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {t.whatsNewTitle}
+                </h3>
+                <div className="w-20 h-1 bg-gray-800 mx-auto mt-2"></div>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-semibold text-gray-800 text-lg leading-snug">
+                  {t.newsTitle}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {t.newsDescription}
+                </p>
+                <button className="text-gray-800 hover:text-black font-semibold transition-colors duration-200 underline">
+                  Read Full Article →
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Map Section */}
       <FindBranches />
+      
       {/* Links Section */}
       <LinksComponent />
     </div>

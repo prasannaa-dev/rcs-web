@@ -201,8 +201,41 @@ const Navbar = () => {
 
   return (
     <header className="w-full top-0 left-0 z-50">
-      {/* TOP NAVIGATION BAR - Blue */}
-      <div className="bg-gradient-to-r from-[#005A8D] via-[#006AA5] to-[#005A8D] text-white fixed top-0 left-0 w-full z-50 shadow-md">
+      {/* HEADER SECTION WITH LOGOS AND TITLE - TOP LAYER */}
+      <div className="bg-white border-b border-gray-200 fixed top-0 left-0 w-full z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-3 lg:py-4 flex items-center justify-center gap-6 lg:gap-8">
+          {/* Left Logo */}
+          <div className="flex-shrink-0">
+            <img
+              src="/Images/cooplogo.png"
+              alt="Cooperative Logo"
+              className="h-16 w-16 lg:h-20 lg:w-20 object-contain"
+            />
+          </div>
+
+          {/* Title Section - Centered */}
+          <div className="text-center">
+            <h1 className="text-red-600 text-xl lg:text-2xl xl:text-3xl font-bold leading-tight">
+              COOPERATIVE SOCIETIES TAMIL NADU
+            </h1>
+            <h2 className="text-gray-700 text-lg lg:text-xl xl:text-2xl font-semibold leading-tight mt-1">
+              கூட்டுறவுச் சங்கங்கள் தமிழ்நாடு
+            </h2>
+          </div>
+
+          {/* Right Logo */}
+          <div className="flex-shrink-0">
+            <img
+              src="/Images/tn-logo.png"
+              alt="Tamil Nadu Logo"
+              className="h-16 w-16 lg:h-20 lg:w-20 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* NAVIGATION BAR - Blue - BOTTOM LAYER - FIXED */}
+      <div className="bg-gradient-to-r from-[#005A8D] via-[#006AA5] to-[#005A8D] text-white fixed top-[100px] lg:top-[112px] left-0 w-full z-40 shadow-md">
         <div className="w-full px-4 lg:px-8 py-2">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Mobile Menu Toggle */}
@@ -455,40 +488,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* HEADER SECTION WITH LOGOS AND TITLE */}
-      <div className="mt-[52px] bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-3 lg:py-4 flex items-center justify-center gap-6 lg:gap-8">
-          {/* Left Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src="/Images/cooplogo.png"
-              alt="Cooperative Logo"
-              className="h-20 w-20 lg:h-24 lg:w-24 object-contain"
-            />
-          </div>
-
-          {/* Title Section - Centered */}
-          <div className="text-center">
-            <h1 className="text-red-600 text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
-      COOPERATIVE SOCIETIES TAMIL NADU
-            </h1>
-            <h2 className="text-gray-700 text-xl lg:text-2xl xl:text-3xl font-semibold leading-tight mt-2">
-              கூட்டுறவுச் சங்கங்கள் தமிழ்நாடு
-            </h2>
-          </div>
-
-          {/* Right Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src="/Images/tn-logo.png"
-              alt="Tamil Nadu Logo"
-              className="h-20 w-20 lg:h-24 lg:w-24 object-contain"
-            />
-          </div>
-        </div>
-      </div>
-
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
